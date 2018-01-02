@@ -2,10 +2,10 @@ FROM debian:stretch-slim
 
 #Install Prerequisite Software and clean up after
 RUN apt-get -yqq update && \
-    apt-get -yqq install ruby ruby-dev make gcc nano && \
+    apt-get -yqq install ruby ruby-dev make gcc g++ nano less && \
     gem install jekyll && \
     gem install bundler && \
-    apt-get -yqq purge ruby-dev make gcc *-dev && \
+    apt-get -yqq purge ruby-dev make gcc g++ *-dev && \
     rm -rf /var/lib/apt/lists/*
 
 ADD ./dotfiles/nanorc.txt /root/.nanorc
