@@ -1,0 +1,3 @@
+set const
+set tabstospaces
+set tabsize 4

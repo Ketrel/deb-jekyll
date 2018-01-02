@@ -1,0 +1,10 @@
+FROM treldev/jekyll:main
+
+#Install Prerequisite Software and clean up after
+RUN gem install jekyll-paginate-v2 && \
+    groupadd -g 1000 devuser && \
+    useradd -u 1000 -g 1000 -m -s /bin/bash devuser && \
+    chpasswd devuser:password
+
+ADD ./dotfiles/nanorc.txt /home/devuser/.nanorc
+ADD ./dotfiles/bashrc.txt /home/devuser/.bashrc
