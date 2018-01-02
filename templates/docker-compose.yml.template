@@ -1,14 +1,14 @@
 version: '3'
 services:
     jekyll:
-        image: treldev/jekyll:dev
+        image: __IMGNAME__/jekylldev:stage2
         build:
             context: ./
-            dockerfile: ./Dockerfiles/Dockerfile.jekylldev
+            dockerfile: ./Dockerfiles/Dockerfile.stage2
         volumes: 
             - ./data:/data:rw
         ports:
             - "4000:4000"
         command: bash
         tty: true
-        user: "1000:1000"
+        user: "__USERUID__:__USERGID__"

@@ -1,0 +1,2 @@
+Directory for data to be utilized in the container.
+To git, only this file should exist based on the higher level .gitignore

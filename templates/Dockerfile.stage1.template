@@ -3,16 +3,10 @@ FROM debian:stretch-slim
 #Install Prerequisite Software and clean up after
 RUN apt-get -yqq update && \
     apt-get -yqq install ruby ruby-dev make gcc nano && \
-#    groupadd -g 1000 devuser && \
-#    useradd -u 1000 -g 1000 -m -s /bin/bash devuser && \
-#    chpasswd devuser:password && \
     gem install jekyll && \
     gem install bundler && \
-#    su devuser -c 'gem install bundler' && \
     apt-get -yqq purge ruby-dev make gcc *-dev && \
     rm -rf /var/lib/apt/lists/*
 
-#ADD ./dotfiles/nanorc.txt /home/devuser/.nanorc
-#ADD ./dotfiles/bashrc.txt /home/devuser/.bashrc
 ADD ./dotfiles/nanorc.txt /root/.nanorc
 ADD ./dotfiles/bashrc.txt /root/.bashrc
