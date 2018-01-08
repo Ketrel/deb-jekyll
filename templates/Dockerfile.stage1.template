@@ -8,5 +8,5 @@ RUN apt-get -yqq update && \
     apt-get -yqq purge ruby-dev make gcc g++ *-dev && \
     rm -rf /var/lib/apt/lists/*
 
-ADD ./dotfiles/nanorc.txt /root/.nanorc
-ADD ./dotfiles/bashrc.txt /root/.bashrc
+ADD ./addfiles/nanorc.txt /root/.nanorc
+ADD ./addfiles/bashrc.txt /root/.bashrc
