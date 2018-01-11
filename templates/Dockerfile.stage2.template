@@ -4,6 +4,7 @@ FROM __IMGNAME__/jekylldev:stage1
 #Install Prerequisite Software and clean up after
 RUN groupadd -g __USERGID__ devuser && \
     useradd -u __USERUID__ -g __USERGID__ -m -s /bin/bash devuser && \
+    chpasswd root:password && \
     chpasswd devuser:password && \
     su devuser -c 'gem install --user-install jekyll-paginate-v2'
 
