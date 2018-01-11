@@ -1,1 +1,1 @@
-docker-compose -f docker-compose-r.yml exec jekyll /bin/bash
+docker-compose exec --user 0 jekyll /bin/bash

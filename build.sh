@@ -15,6 +15,5 @@ fi
 docker build -f ./Dockerfiles/Dockerfile.stage2 -t ${IMGNAME}/jekylldev:stage2 .
 
 sed 's/__USERUID__/'"${USERUID}"'/g; s/__USERGID__/'"${USERGID}"'/g; s/__IMGNAME__/'"${IMGNAME}"'/g' templates/docker-compose.yml.template > docker-compose.yml
-sed 's/__USERUID__/'"${USERUID}"'/g; s/__USERGID__/'"${USERGID}"'/g; s/__IMGNAME__/'"${IMGNAME}"'/g' templates/docker-compose-r.yml.template > docker-compose-r.yml
 
 docker-compose up -d
