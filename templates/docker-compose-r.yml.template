@@ -1,0 +1,13 @@
+version: '3'
+services:
+    jekyll:
+        image: __IMGNAME__/jekylldev:stage2
+        build:
+            context: ./
+            dockerfile: ./Dockerfiles/Dockerfile.stage2
+        volumes: 
+            - ./data:/data:rw
+        ports:
+            - "4000:4000"
+        command: bash
+        tty: true
