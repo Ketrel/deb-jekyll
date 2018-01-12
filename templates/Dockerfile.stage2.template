@@ -5,7 +5,9 @@ FROM __IMGNAME__/jekylldev:stage1
 RUN groupadd -g __USERGID__ devuser && \
     useradd -u __USERUID__ -g __USERGID__ -m -s /bin/bash devuser && \
     chpasswd devuser:password && \
-    su devuser -c 'gem install --user-install jekyll-paginate-v2 -v 1.9.1'
+    su devuser -c 'gem install --user-install jekyll-paginate-v2 -v 1.9.0' && \
+    su devuser -c 'gem install --user-install jekyll-paginate-v2 -v 1.9.1' && \
+    su devuser -c 'gem install --user-install jekyll-paginate-v2 -v 1.9.2'
 
 
 ADD ./addfiles/nanorc.txt /home/devuser/.nanorc

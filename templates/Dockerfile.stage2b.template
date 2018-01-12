@@ -2,4 +2,6 @@
 FROM __IMGNAME__/jekylldev:stage1
 
 #Install Prerequisite Software and clean up after
-RUN gem install jekyll-paginate-v2 -v 1.9.1
+RUN gem install jekyll-paginate-v2 -v 1.9.0 && \
+    gem install jekyll-paginate-v2 -v 1.9.1 && \
+    gem install jekyll-paginate-v2 -v 1.9.2
