@@ -11,5 +11,5 @@ RUN groupadd -g __USERGID__ devuser && \
     su devuser -c 'gem install --user-install minima'
 
 
-ADD ./addfiles/nanorc.txt /home/devuser/.nanorc
-ADD ./addfiles/bashrc.txt /home/devuser/.bashrc
+COPY ./addfiles/nanorc.txt /home/devuser/.nanorc
+COPY ./addfiles/bashrc.txt /home/devuser/.bashrc
